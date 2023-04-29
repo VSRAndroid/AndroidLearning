@@ -1,4 +1,4 @@
-package com.learning.topics
+package com.learning.topics.mvvm_demo.ui.demo_ui
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +7,9 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.learning.topics.R
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         clickBtn?.setOnClickListener(View.OnClickListener {
             CoroutineScope(Main).launch {
                 countTextView?.text = UserDataManager().getTotalValue().toString()
-                Log.e("get value",".."+UserDataManager().getTotalValue().toString())
+                Log.e("get value",".."+ UserDataManager().getTotalValue().toString())
             }
         })
     }

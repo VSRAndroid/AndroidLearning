@@ -1,4 +1,4 @@
-package com.learning.topics
+package com.learning.topics.mvvm_demo.ui.demo_ui
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
