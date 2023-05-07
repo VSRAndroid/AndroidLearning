@@ -1,9 +1,7 @@
 package com.learning.topics.room_db_demo.db
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Update
+import androidx.lifecycle.LiveData
+import androidx.room.*
 
 @Dao
 interface SubscriberDAO {
@@ -16,5 +14,11 @@ interface SubscriberDAO {
 
     @Delete
     suspend fun deleteSubscriber(subscriber: Subscriber)
+
+    @Query("DELETE FROM subscriber_data_table")
+    suspend fun deleteAll()
+
+    @Query("SELECT * FROM subscriber_data_table")
+    fun getAllSubscriber() : LiveData<List<Subscriber>>
 
 }
